@@ -7,3 +7,5 @@ Scenario: Simple Post
 When I post "Welcome to my world!"
 Then my post "Welcome to my world!" is published
 And I should see a confirmation "was successfully created"
+
+small change
