@@ -3,6 +3,14 @@ require 'watir'
 
 World PageObject::PageFactory
 
+When /^I open the home page$/ do
+  visit HomePage
+end
+
+Then /^I should see "(.*?)"$/ do |message|
+  on_page(HomePage).text.should == message
+end
+
 When /^I post "(.*?)"$/ do |message_contents|
   visit CreateContentPage
 end
@@ -13,6 +21,12 @@ end
 
 Then /^I should see a confirmation "(.*?)"$/ do |confirmation|
   pending # express the regexp above with the code you wish you had
+end
+
+class HomePage
+  include PageObject
+
+  page_url "http://localhost:3000"
 end
 
 class CreateContentPage
