@@ -3,7 +3,7 @@ require 'watir'
 
 World PageObject::PageFactory
 
-When /^I open the home page$/ do
+When /^I open my rails site$/ do
   visit HomePage
 end
 
