@@ -1,13 +1,10 @@
 require 'page-object'
 require 'watir'
 
+World PageObject::PageFactory
+
 When /^I post "(.*?)"$/ do |message_contents|
-  browser = Watir::Browser.new :firefox
-  browser.goto "http://google.com"
-  browser.text_field(:name => 'q').set("WebDriver rocks!")
-  browser.button(:name => 'btnG').click
-  puts browser.url
-  browser.close
+  visit CreateContentPage
 end
 
 Then /^my post "(.*?)" is published$/ do |message_contents|
@@ -20,6 +17,8 @@ end
 
 class CreateContentPage
   include PageObject
+
+  page_url "http://localhost:3000"
 #  text_field(:content, :id => 'content')
 #  button(:publish, :id => 'submit')
 end
