@@ -1,3 +1,9 @@
 Run all completed tests:
 
 bundle exec cucumber -t ~@incomplete
+
+Note that the acceptance tests will not pass if there is not a rails server running locally, on port 3000. To start that, run 
+
+bundle exec rails server
+
+and then run the tests.
