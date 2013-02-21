@@ -3,7 +3,6 @@ As a blogger
 I want to post my own content
 So that I can publish independently
 
-@wip
 Scenario: Home Page
 When I open the home page
 Then I should see "Welcome aboard"

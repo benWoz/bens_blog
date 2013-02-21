@@ -8,7 +8,7 @@ When /^I open the home page$/ do
 end
 
 Then /^I should see "(.*?)"$/ do |message|
-  on_page(HomePage).text.should == message
+  on_page(HomePage).text.should include message
 end
 
 When /^I post "(.*?)"$/ do |message_contents|
